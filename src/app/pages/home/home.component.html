@@ -1,0 +1,25 @@
+ <div>
+   <button class="btn btn-info" (click)="goNewTask()">Agregar nueva tarea</button>
+   <button class="btn btn-warning" (click)="changeAdminMode()">Modo borrar: {{adminMode}}</button>
+ </div>
+  <div class="row">
+    <div class="col-sm-2 p-1" *ngFor="let card of this.cardList">
+      <div class="card" style="width: 16rem; height: 10rem">
+        <div class="card-body  d-flex flex-column">
+          <button *ngIf="adminMode" (click)="deleteIt(card.id)" class="btn btn-close align-self-end"></button>
+          <h6 class="card-title">{{card.title}}</h6>
+          <div *ngIf="card.completed; then positivo else negativo"></div>
+          <ng-template #positivo>
+            <div class="mt-auto text-center">
+              <button (click)="card.completed = !card.completed" class="btn btn-success">Completed!</button>
+            </div>
+          </ng-template>
+          <ng-template #negativo>
+            <div  class="mt-auto text-center">
+              <button (click)="card.completed = !card.completed" class="btn btn-danger">Incompleted..</button>
+            </div>
+          </ng-template>
+        </div>
+    </div>
+    </div>
+  </div>
