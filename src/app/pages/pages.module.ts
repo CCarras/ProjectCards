@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterLink} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import { AddTaskComponent } from './add-task/add-task.component';
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -10,7 +11,8 @@ import { AddTaskComponent } from './add-task/add-task.component';
   declarations: [HomeComponent, AddTaskComponent],
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    FormsModule
   ]
 })
 export class PagesModule { }

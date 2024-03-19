@@ -28,10 +28,6 @@ export class HomeComponent implements OnInit{
     }
   }
 
-  changeActivity(id: number):void {
-    this.cardList[id-1].completed = !this.cardList[id-1].completed;
-  }
-
   changeAdminMode(): void {
     this.adminMode = !this.adminMode;
   }

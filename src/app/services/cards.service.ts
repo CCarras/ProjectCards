@@ -18,6 +18,14 @@ export class CardsService {
     this.cardList = myCards;
   }
 
+  getLastCard(): number {
+    return this.cardList.length;
+  }
+
+  saveNewCard(nCard: CardForm): void {
+    this.cardList.unshift(nCard);
+  }
+
   getMyCards(): CardForm[] {
     return this.cardList;
   }
